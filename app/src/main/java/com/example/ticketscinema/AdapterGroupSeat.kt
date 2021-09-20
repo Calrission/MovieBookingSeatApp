@@ -21,7 +21,7 @@ class AdapterGroupSeat(var listGroup: List<ModelGroupSeats>): RecyclerView.Adapt
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.rec_lines.apply {
-            adapter = AdapterLineSeat(listGroup[position].listLineSeats)
+            adapter = AdapterLineSeat(listGroup[position].listLineSeats, position)
             layoutManager = LinearLayoutManager(holder.itemView.context, LinearLayoutManager.VERTICAL, false)
         }
     }

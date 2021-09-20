@@ -8,7 +8,7 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ticketscinema.models.ModelSeat
 
-class AdapterSeat(var listSeat: List<ModelSeat>): RecyclerView.Adapter<AdapterSeat.ViewHolder>() {
+class AdapterSeat(var listSeat: List<ModelSeat>, val positionLine: Int, val positionGroup: Int): RecyclerView.Adapter<AdapterSeat.ViewHolder>() {
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val seat = itemView.findViewById<CardView>(R.id.card_seat)
     }
@@ -24,6 +24,10 @@ class AdapterSeat(var listSeat: List<ModelSeat>): RecyclerView.Adapter<AdapterSe
                 1 -> R.color.reserved
                 else -> R.color.selected
         }))
+
+        holder.seat.setOnClickListener {
+            OnCLickSeat.onClickSeat.onCLickSeat(listSeat[position], position, positionLine, positionGroup)
+        }
     }
 
     override fun getItemCount(): Int = listSeat.size

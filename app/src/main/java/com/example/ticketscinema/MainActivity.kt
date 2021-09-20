@@ -2,11 +2,23 @@ package com.example.ticketscinema
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
+import com.example.ticketscinema.models.ModelSeat
 import kotlinx.android.synthetic.main.activity_main.*
 
+object OnCLickSeat {
+    lateinit var onClickSeat: OnClickSeatItem
+}
+
+const val ALPHABET_LOWER = "abcdefghijklmnopqrstuvwxyz"
+val ALPHABET_UPPER = ALPHABET_LOWER.uppercase()
+
 class MainActivity : AppCompatActivity() {
+
+    var listSelectedSeats: MutableList<String> = arrayListOf()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -35,5 +47,28 @@ class MainActivity : AppCompatActivity() {
             layoutManager = LinearLayoutManager(this@MainActivity)
         }
         rec_group_seats.layoutManager!!.scrollToPosition(Info.modelFilm.listGroupSeats.lastIndex)
+
+        OnCLickSeat.onClickSeat = object: OnClickSeatItem{
+            override fun onCLickSeat(
+                modelSeat: ModelSeat,
+                positionSeat: Int,
+                positionLine: Int,
+                positionGroup: Int
+            ) {
+                val nowStatus = modelSeat.status
+                if (nowStatus != 1) {
+                    if (nowStatus == 0) {
+                        modelSeat.status = 2
+                        listSelectedSeats.add("${ALPHABET_UPPER[positionLine]}${positionSeat + 1}")
+                    }else{
+                        modelSeat.status = 0
+                        listSelectedSeats.remove("${ALPHABET_UPPER[positionLine]}${positionSeat + 1}")
+                    }
+                    rec_group_seats.adapter!!.notifyItemChanged(positionGroup)
+                }else{
+                    Toast.makeText(this@MainActivity, "Seat reserved !", Toast.LENGTH_LONG).show()
+                }
+            }
+        }
     }
 }

@@ -23,5 +23,5 @@ data class ModelLineSeats(
 )
 
 data class ModelSeat(
-    val status: Int = 1
+    var status: Int = 1
 )
