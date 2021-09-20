@@ -50,8 +50,8 @@
             android:orientation="horizontal">
 
             <androidx.cardview.widget.CardView
-                android:layout_width="22dp"
-                android:layout_height="22dp"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
                 app:cardBackgroundColor="@color/available"
                 app:cardCornerRadius="6dp"
                 app:cardElevation="0dp" />
@@ -74,8 +74,8 @@
             android:orientation="horizontal">
 
             <androidx.cardview.widget.CardView
-                android:layout_width="22dp"
-                android:layout_height="22dp"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
                 app:cardBackgroundColor="@color/reserved"
                 app:cardCornerRadius="6dp"
                 app:cardElevation="0dp" />
@@ -98,8 +98,8 @@
             android:orientation="horizontal">
 
             <androidx.cardview.widget.CardView
-                android:layout_width="22dp"
-                android:layout_height="22dp"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
                 app:cardBackgroundColor="@color/selected"
                 app:cardCornerRadius="6dp"
                 app:cardElevation="0dp" />
@@ -133,7 +133,15 @@
             android:layout_height="match_parent"
             android:layout_weight="7"
             app:cardCornerRadius="10dp"
-            app:cardElevation="0dp" />
+            app:cardElevation="0dp" >
+
+            <ImageView
+                android:id="@+id/cover_film"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                tools:srcCompat="@tools:sample/avatars" />
+        </androidx.cardview.widget.CardView>
 
         <LinearLayout
             android:layout_width="0dp"
@@ -206,7 +214,7 @@
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rec_seats"
+        android:id="@+id/rec_group_seats"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginStart="18dp"
@@ -283,8 +291,8 @@
         android:id="@+id/screen_svg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginEnd="64dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginEnd="22dp"
         android:layout_marginBottom="16dp"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toTopOf="@+id/motion_message"
