@@ -16,7 +16,7 @@ const val ALPHABET_LOWER = "abcdefghijklmnopqrstuvwxyz"
 val ALPHABET_UPPER = ALPHABET_LOWER.uppercase()
 
 class MainActivity : AppCompatActivity() {
-
+    var messageIsShow = false
     var listSelectedSeats: MutableList<String> = arrayListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -60,9 +60,15 @@ class MainActivity : AppCompatActivity() {
                     if (nowStatus == 0) {
                         modelSeat.status = 2
                         listSelectedSeats.add("${ALPHABET_UPPER[positionLine]}${positionSeat + 1}")
+                        updateMessageTexts()
+                        if (!messageIsShow)
+                            showMessage()
                     }else{
                         modelSeat.status = 0
                         listSelectedSeats.remove("${ALPHABET_UPPER[positionLine]}${positionSeat + 1}")
+                        if (listSelectedSeats.isEmpty())
+                            hideMessage()
+                        updateMessageTexts()
                     }
                     rec_group_seats.adapter!!.notifyItemChanged(positionGroup)
                 }else{
@@ -70,5 +76,20 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    fun updateMessageTexts(){
+        text_message.text = "${listSelectedSeats.size} Sealt (${listSelectedSeats.joinToString(separator = ", ")})"
+        cost.text = "Pay $${listSelectedSeats.size * 20}"
+    }
+
+    fun showMessage(){
+        messageIsShow = true
+        motion_message.transitionToEnd()
+    }
+
+    fun hideMessage(){
+        messageIsShow = false
+        motion_message.transitionToStart()
     }
 }
