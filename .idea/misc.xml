@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Android Project/TicketsCinema/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Android Project/TicketsCinema/app/src/main/res/drawable/ic_line_ver.xml" value="0.22239583333333332" />
+        <entry key="..\:/Android Project/TicketsCinema/app/src/main/res/drawable/line_ver.xml" value="0.22239583333333332" />
+        <entry key="..\:/Android Project/TicketsCinema/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Android Project/TicketsCinema/app/src/main/res/layout/item_group.xml" value="0.20625" />
         <entry key="..\:/Android Project/TicketsCinema/app/src/main/res/layout/item_line_seat.xml" value="0.20625" />
         <entry key="..\:/Android Project/TicketsCinema/app/src/main/res/layout/item_seat.xml" value="0.20625" />

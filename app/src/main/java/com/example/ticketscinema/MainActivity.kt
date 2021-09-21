@@ -5,15 +5,13 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
+import com.example.ticketscinema.models.ModelLineSeats
 import com.example.ticketscinema.models.ModelSeat
 import kotlinx.android.synthetic.main.activity_main.*
 
 object OnCLickSeat {
     lateinit var onClickSeat: OnClickSeatItem
 }
-
-const val ALPHABET_LOWER = "abcdefghijklmnopqrstuvwxyz"
-val ALPHABET_UPPER = ALPHABET_LOWER.uppercase()
 
 class MainActivity : AppCompatActivity() {
     var messageIsShow = false
@@ -55,17 +53,19 @@ class MainActivity : AppCompatActivity() {
                 positionLine: Int,
                 positionGroup: Int
             ) {
-                val nowStatus = modelSeat.status
-                if (nowStatus != 1) {
+               val nowStatus = modelSeat.status
+               if (nowStatus != 1) {
                     if (nowStatus == 0) {
                         modelSeat.status = 2
-                        listSelectedSeats.add("${ALPHABET_UPPER[positionLine]}${positionSeat + 1}")
+                        listSelectedSeats.add(
+                            "${Info.modelFilm.listGroupSeats[positionGroup].listLineSeats[positionLine].sim}${positionSeat + 1}")
                         updateMessageTexts()
                         if (!messageIsShow)
                             showMessage()
                     }else{
                         modelSeat.status = 0
-                        listSelectedSeats.remove("${ALPHABET_UPPER[positionLine]}${positionSeat + 1}")
+                        listSelectedSeats.remove(
+                            "${Info.modelFilm.listGroupSeats[positionGroup].listLineSeats[positionLine].sim}${positionSeat + 1}")
                         if (listSelectedSeats.isEmpty())
                             hideMessage()
                         updateMessageTexts()

@@ -19,7 +19,8 @@ data class ModelGroupSeats(
 )
 
 data class ModelLineSeats(
-    val listSeats: List<ModelSeat>
+    val listSeats: List<ModelSeat>,
+    val sim: String,
 )
 
 data class ModelSeat(

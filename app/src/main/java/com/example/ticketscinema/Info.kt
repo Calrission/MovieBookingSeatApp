@@ -32,7 +32,7 @@ object Info {
                             ModelSeat(1),
                             ModelSeat(1),
                             ModelSeat(1),
-                        )),
+                        ), "A"),
                 )),
             ModelGroupSeats(arrayListOf(
                 ModelLineSeats(arrayListOf(
@@ -48,7 +48,7 @@ object Info {
                     ModelSeat(0),
                     ModelSeat(0),
                     ModelSeat(1),
-                )),
+                ), "B"),
                 ModelLineSeats(arrayListOf(
                     ModelSeat(0),
                     ModelSeat(0),
@@ -62,7 +62,7 @@ object Info {
                     ModelSeat(0),
                     ModelSeat(1),
                     ModelSeat(1),
-                )),
+                ), "C"),
                 ModelLineSeats(arrayListOf(
                     ModelSeat(1),
                     ModelSeat(1),
@@ -76,7 +76,7 @@ object Info {
                     ModelSeat(0),
                     ModelSeat(0),
                     ModelSeat(1),
-                )),
+                ), "D"),
             )),
             ModelGroupSeats(arrayListOf(
                 ModelLineSeats(arrayListOf(
@@ -92,7 +92,7 @@ object Info {
                     ModelSeat(1),
                     ModelSeat(1),
                     ModelSeat(1),
-                )),
+                ), "E"),
                 ModelLineSeats(arrayListOf(
                     ModelSeat(1),
                     ModelSeat(1),
@@ -106,7 +106,7 @@ object Info {
                     ModelSeat(1),
                     ModelSeat(1),
                     ModelSeat(1),
-                )),
+                ), "F"),
                 ModelLineSeats(arrayListOf(
                     ModelSeat(1),
                     ModelSeat(1),
@@ -119,7 +119,7 @@ object Info {
                     ModelSeat(1),
                     ModelSeat(0),
                     ModelSeat(0),
-                )),
+                ), "G"),
                 ModelLineSeats(arrayListOf(
                     ModelSeat(0),
                     ModelSeat(0),
@@ -132,7 +132,7 @@ object Info {
                     ModelSeat(0),
                     ModelSeat(0),
                     ModelSeat(0),
-                )),
+                ), "H"),
             )),
         )
     )
